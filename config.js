@@ -4,7 +4,7 @@ function mapPresence(val) {
     const mapping = {
         typing: 'composing',
         online: 'available',
-        recording: 'recording',
+        recording: 'paused',
         paused: 'paused',
         offline: 'unavailable'
     };
@@ -14,7 +14,7 @@ function mapPresence(val) {
 module.exports = {
     prefixes: process.env.PREFIX
         ? process.env.PREFIX.split(',').map(p => p.trim())
-        : [''],
+        : ['.'],
 
     NUMBER: process.env.YOUR_NUMBER || '254768421673',
     MODE: (process.env.MODE || 'private').toLowerCase().trim(),
